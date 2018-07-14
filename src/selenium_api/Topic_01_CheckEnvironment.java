@@ -23,6 +23,8 @@ public class Topic_01_CheckEnvironment {
 	  System.out.println("Check homepage url");
 	  String homePageUrl = driver.getCurrentUrl();
 	  Assert.assertEquals(homePageUrl, "http://demo.guru99.com/v4/");
+	  
+	  System.out.println("Done Topic 01");
   }
   
   @BeforeClass
