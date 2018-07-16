@@ -31,12 +31,15 @@ public class Topic_01_CheckEnvironment {
   public void beforeClass() {
 	  driver = new FirefoxDriver();
 	  driver.get("http://demo.guru99.com/v4/");
+	  
+	  //wait để render thành công
 	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	  driver.manage().window().maximize();
   }
 
   @AfterClass
   public void afterClass() {
+	  //Dùng quit(): close broswer để clear môi trường
 	  driver.quit();
   }
 
