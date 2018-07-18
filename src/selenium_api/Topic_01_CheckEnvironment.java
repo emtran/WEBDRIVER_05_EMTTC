@@ -9,38 +9,36 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-
-
 public class Topic_01_CheckEnvironment {
 	WebDriver driver;
-	
-  @Test
-  public void TC_01_CheckUrlAndTitle() {
-	  System.out.println("Check homepage title");
-	  String homePageTitle = driver.getTitle();
-	  Assert.assertEquals(homePageTitle, "Guru99 Bank Home Page");
-	  
-	  System.out.println("Check homepage url");
-	  String homePageUrl = driver.getCurrentUrl();
-	  Assert.assertEquals(homePageUrl, "http://demo.guru99.com/v4/");
-	  
-	  System.out.println("Done Topic 01");
-  }
-  
-  @BeforeClass
-  public void beforeClass() {
-	  driver = new FirefoxDriver();
-	  driver.get("http://demo.guru99.com/v4/");
-	  
-	  //wait để render thành công
-	  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-	  driver.manage().window().maximize();
-  }
 
-  @AfterClass
-  public void afterClass() {
-	  //Dùng quit(): close broswer để clear môi trường
-	  driver.quit();
-  }
+	@Test
+	public void TC_01_CheckUrlAndTitle() {
+		System.out.println("Check homepage title");
+		String homePageTitle = driver.getTitle();
+		Assert.assertEquals(homePageTitle, "Guru99 Bank Home Page");
+
+		System.out.println("Check homepage url");
+		String homePageUrl = driver.getCurrentUrl();
+		Assert.assertEquals(homePageUrl, "http://demo.guru99.com/v4/");
+
+		System.out.println("Done Topic 01");
+	}
+
+	@BeforeClass
+	public void beforeClass() {
+		driver = new FirefoxDriver();
+		driver.get("http://demo.guru99.com/v4/");
+
+		// wait để render thành công
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+		driver.manage().window().maximize();
+	}
+
+	@AfterClass
+	public void afterClass() {
+		// Dùng quit(): close broswer để clear môi trường
+		driver.quit();
+	}
 
 }
