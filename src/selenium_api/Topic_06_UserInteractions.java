@@ -121,7 +121,7 @@ public class Topic_06_UserInteractions {
 	}
 	
 	@Test
-	public void TC_05_DragAndDrop() {
+	public void TC_05_DragAndDrop_01() {
 		launchBrowser("http://demos.telerik.com/kendo-ui/dragdrop/angular");
 		
 		//Before drag/drop
@@ -141,7 +141,7 @@ public class Topic_06_UserInteractions {
 	}
 	
 	@Test
-	public void TC_05_DragAndDrop_Html5() {
+	public void TC_05_DragAndDrop_02() {
 		launchBrowser("http://jqueryui.com/resources/demos/droppable/default.html");
 		
 		WebElement sourceElement = driver.findElement(By.xpath("//div[@id='draggable']"));
