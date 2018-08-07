@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="LIVE GURU" parallel="tests" thread-count = "3">
+
+<!-- 	<groups> -->
+<!-- 		<run> -->
+<!-- 			<include name="customer" /> -->
+<!-- 			<include name="payment" /> -->
+<!-- 		</run> -->
+<!-- 	</groups> -->
+
+<test name ="run on CHROME">
+	<parameter name = "browser" value ="chrome"/>
+	<parameter name = "user" value ="automationvalid_01@gmail.com"/>
+	<parameter name = "password" value ="111111"/>
+	<classes>
+		<class name = "selenium_testng.TestNG_05_Parameters_Multibrowsers_Loop"/>
+	</classes>
+</test>
+
+<test name ="run on FIRFOX">
+	<parameter name = "browser" value ="firefox"/>
+	<parameter name = "user" value ="automationvalid_01@gmail.com"/>
+	<parameter name = "password" value ="111111"/>
+	<classes>
+		<class name = "selenium_testng.TestNG_05_Parameters_Multibrowsers_Loop"/>
+	</classes>
+</test>
+
+<!-- <test name ="run on IE"> -->
+<!-- 	<parameter name = "browser" value ="ie"/> -->
+<!-- 	<parameter name = "user" value ="automationvalid_01@gmail.com"/> -->
+<!-- 	<parameter name = "password" value ="111111"/> -->
+<!-- 	<classes> -->
+<!-- 		<class name = "selenium_testng.TestNG_05_Parameters_Multibrowsers_Loop"/> -->
+<!-- 	</classes> -->
+<!-- </test> -->
+
+</suite> <!-- Suite -->

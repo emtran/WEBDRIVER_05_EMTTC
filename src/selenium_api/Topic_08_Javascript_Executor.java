@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -18,8 +18,11 @@ public class Topic_08_Javascript_Executor {
 	public void beforeClass() {
 		//driver = new FirefoxDriver();
 		
-		System.setProperty("webdriver.ie.driver", ".\\driver\\IEDriverServer.exe");
-		driver = new InternetExplorerDriver();
+		 System.setProperty("webdriver.chrome.driver", ".\\driver\\chromedriver.exe");
+		 driver = new ChromeDriver();
+		
+//		System.setProperty("webdriver.ie.driver", ".\\driver\\IEDriverServer.exe");
+//		driver = new InternetExplorerDriver();
 	}
 
 	public void launchBrowser(String baseUrl) {
@@ -28,7 +31,7 @@ public class Topic_08_Javascript_Executor {
 		driver.manage().window().maximize();
 	}
 
-	//@Test
+	@Test
 	public void JavascriptExcecutor() throws Exception {
 		launchBrowser("http://live.guru99.com/");
 		
@@ -68,7 +71,7 @@ public class Topic_08_Javascript_Executor {
 		
 	}
 	
-	@Test
+	//@Test
 	public void RemoveAttribute() {
 		launchBrowser("https://www.w3schools.com/tags/tryit.asp?filename=tryhtml_input_disabled");
 		WebElement iframeResult = driver.findElement(By.xpath("//iframe[@id='iframeResult']"));
@@ -130,7 +133,7 @@ public class Topic_08_Javascript_Executor {
 
 	@AfterClass
 	public void afterClass() {
-		//driver.quit();
+		driver.quit();
 	}
 
 }
