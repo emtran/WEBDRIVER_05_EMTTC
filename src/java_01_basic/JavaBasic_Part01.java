@@ -6,16 +6,13 @@ public class JavaBasic_Part01 {
 	@Test
 	public void Exercise() {
 		String chuoi = "Automation Testing Tutorials Online 123456";
-		int aNumber = 0;
-		int i;
+		int aNumber = 0, i, letterCount = 0, digitCount = 0;
 		boolean isTesting = false;
 		boolean isAutomation = false;
 		boolean isOnline = false;
 		int indexTurorials;
 		String newChuoi;
-		String numberString;
-		int numberChar = 0;
-
+		
 		
 		for (i = 0; i < chuoi.length(); i++) {
 			char a = chuoi.charAt(i);
@@ -65,10 +62,16 @@ public class JavaBasic_Part01 {
 		System.out.println(newChuoi);
 		
 		
-		numberString = subString[lengthSugString -1];
-		for (i = 0; i < numberString.length(); i++) {
-			numberChar ++;
-		}
-		System.out.println("So luong ky tu la so trong chuoi " + numberChar);
+		for (i = 0; i < chuoi.length(); i++) {
+			if(Character.isLetter(chuoi.charAt(i))) 
+				letterCount++;
+			else if (Character.isDigit(chuoi.charAt(i))) 
+				digitCount++;
+			}
+		
+		System.out.println("So luong ky tu la so trong chuoi " + digitCount);
+		System.out.println("So luong ky tu la ky tu trong chuoi " + letterCount);
+		
+		
 	}
 }
